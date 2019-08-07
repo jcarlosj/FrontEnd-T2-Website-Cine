@@ -1,0 +1,372 @@
+body{
+    background-color: #dddddd; 
+}
+.container{
+    width: 100%; 
+    display: grid; 
+    grid-auto-rows: min-content; 
+    
+    grid-template-areas: 
+        'datos datos datos datos'
+        'boletas boletas boletas boletas'
+        'slider slider slider slider'
+        'cartelera cartelera cartelera cartelera'
+        'estrenos estrenos estrenos estrenos'
+        'promociones1 promociones1 promociones2 promociones2'
+        'social social social social'
+        'piepagina piepagina piepagina piepagina'; 
+}
+.container [class*='box-']{
+border: brown solid 5px; 
+}
+/* ---------------------------------------------- */
+.container .box-datos{
+    grid-area: datos;
+    border: 3px solid red; 
+    width:100%; 
+    height: 40px; 
+}
+.container .box-datos ul{
+    width: 100%; 
+    height: 40px; 
+
+    
+    border: black 5px solid; 
+    position: relative;
+    padding: 0; 
+    margin: 0; 
+}
+.container .box-datos ul li{
+    float: left; 
+    list-style-type: none;
+    padding: 0px 0px 0px 10px;
+   
+}
+.container .box-datos ul li a{
+    float: left; 
+    padding: 0px 60px; 
+    text-decoration: none;
+    color: black; 
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    position: relative;
+    top: 10px; 
+    
+}
+.container .box-datos ul li a:hover{
+    color: brown; 
+    font-size: 20px;
+}
+
+/* ---------------------------------------------- */
+.container .box-boletas{
+    grid-area: boletas;
+    border: 3px solid brown; 
+    width: 100%; 
+}
+/* PILAS SE SALE   EL UL */
+.container .box-boletas ul{
+    width: 100%;   
+    height: 30px; 
+    
+    border: black 5px solid; 
+    position: relative;
+    padding: px; 
+    margin: 0px; 
+}
+.container .box-boletas ul li{
+    float: left; 
+    list-style-type: none;
+    padding: 0px 0px 0px 10px; 
+}
+.container .box-boletas ul li a{
+    float: left; 
+    padding: 0px 50px 0px 50px;  
+    text-decoration: none;
+    color: black; 
+    font-size: 25px; 
+}
+.container .box-boletas ul li a:hover{
+    color: brown; 
+    
+}
+
+
+/* ---------------------------------------------- */
+.container .box-slider{
+    grid-area: slider;
+    border: 3px solid red; 
+    width: 
+}
+.container .box-cartelera{
+    grid-area: cartelera;
+    border: 3px solid red; 
+    width: 
+}
+.container .box-estrenos{
+    grid-area: estrenos;
+    border: 3px solid red; 
+    width: 
+}
+
+/* .container .box-toystory{
+    grid-area: toystory;
+    border: 3px solid red; 
+    width: 
+}
+.container .box-anna{
+    grid-area: anna;
+    border: 3px solid red; 
+    width: 
+}
+.container .box-spiderman{
+    grid-area: spiderman;
+    border: 3px solid red; 
+    width: 
+}
+.container .box-endgame{
+    grid-area: endgame;
+    border: 3px solid red; 
+    width: 
+} */
+/* .container .box-reyleon{
+    grid-area: reyleon;
+    border: 3px solid red; 
+    width: 
+}
+.container .box-rapidos{
+    grid-area: rapidos;
+    border: 3px solid red; 
+    width: 
+}
+.container .box-bosquemaldito{
+    grid-area: bosquemaldito;
+    border: 3px solid red; 
+    width: 
+}
+.container .box-tedbunny{
+    grid-area: tedbunny;
+    border: 3px solid red; 
+    width: 
+} */
+.container .box-promociones1{
+    grid-area: promociones1;
+    border: 3px solid red; 
+    width: 
+}
+.container .box-promociones2{
+    grid-area:promociones2 ;
+    border: 3px solid red; 
+    width: 
+}
+.container .box-social{
+    grid-area: social;
+    border: 3px solid red; 
+    width: 
+}
+.container .box-piepagina{
+    grid-area: piepagina;
+    border: 3px solid red; 
+    width: 
+}
+
+
+/** Slider */
+
+img {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
+.slider {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    display: none;
+    user-select: none;
+}
+.slide {
+    height: 100%;
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.slide img {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    transform: translatez(0);
+}
+.state {
+    display: none;
+}
+.nav {
+    display: none;
+}
+.prev,
+.next {
+    position: absolute;
+    top: 50%; right: 0;
+    width: 50px; height: 200px;
+    line-height: 200px;
+    margin: -100px 0 0 0;
+    text-decoration: none;
+    text-align: center;
+    background: #00aedb;
+    color: #404040;
+    z-index: 2;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    text-shadow: 0 0 1px #333;
+}
+.prev {
+    left: 0;
+    right: auto;
+}
+.next:active,
+.prev:active {
+    font-size: 26px;
+}
+
+/** Conditions */
+
+.state:checked + .wrap {
+    display: table;
+}
+.state:checked + .wrap img {
+    transform: scale(.8);
+    animation: image-flip ease-in .55s;
+    animation-fill-mode:forwards;
+}
+.state:checked + .wrap .nav {
+    display: block;
+}
+
+/** Animations Key Frames */
+
+@keyframes image-zoom {
+    0% {
+        opacity: 0;
+        transform: scale(.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes image-flip {
+    0% {
+        transform: perspective(200px) rotateY(90deg);
+        opacity: 0;
+    }
+    40% {
+        transform: perspective(200px) rotateY(-10deg);
+    }
+    70% {
+        transform: perspective(200px) rotateY(10deg);
+    }
+    100% {
+        transform: perspective(200px) rotateY(0deg);
+        opacity: 1;
+    }
+}
+  
+
+/** Trailer Cards */
+.band {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    display: grid;
+    
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+}
+
+@media only screen and ( min-width: 576px ) {
+.band {
+    grid-template-columns: 1fr 1fr;
+}  
+}
+
+@media only screen and (min-width: 768px) {
+.band {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+}
+
+@media only screen and (min-width: 992px) {
+.band {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+}
+
+@media only screen and (min-width: 1200px) {
+.band {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+}
+
+.card {
+background: white;
+text-decoration: none;
+color: #444;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+display: flex;
+flex-direction: column;
+min-height: 100%;
+
+position: relative;
+top: 0;
+transition: all .1s ease-in;
+}
+
+.card:hover {
+top: -2px;
+box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+
+
+
+/* typography */
+.card h1 {
+font-size: 20px;
+margin: 0;
+color: #333;
+text-transform: uppercase;
+}
+
+.card p { 
+line-height: 1.4;
+}
+
+.card .info {
+font-size: 12px;
+font-weight: bold;
+}
+
